@@ -1,0 +1,44 @@
+2024-10-10 10:43:50,596 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:25]
+2024-10-10 10:43:57,571 INFO: test info msg. [in D:\TestCode\HouseCustomizedBackAPP\app.py:30]
+2024-10-10 11:04:51,337 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:31]
+2024-10-10 11:06:23,262 INFO: test info msg. [in D:\TestCode\HouseCustomizedBackAPP\app.py:36]
+2024-10-10 11:06:43,799 INFO: test info msg. [in D:\TestCode\HouseCustomizedBackAPP\app.py:36]
+2024-10-10 11:15:34,974 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:31]
+2024-10-10 11:15:39,604 ERROR: Exception on /protect [GET] [in D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: jwt_required.<locals>.wrapper() missing 1 required positional argument: 'fn'
+2024-10-10 11:16:39,395 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:31]
+2024-10-10 11:21:23,212 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:33]
+2024-10-10 11:21:32,995 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:33]
+2024-10-10 16:18:53,158 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:48]
+2024-10-10 16:25:25,099 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:48]
+2024-10-10 17:15:46,212 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:46]
+2024-10-10 17:50:57,484 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:46]
+2024-10-10 17:51:34,419 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:46]
+2024-10-10 17:52:42,828 INFO: Flask App Startup [in D:\TestCode\HouseCustomizedBackAPP\app.py:46]
+2024-10-10 17:53:32,584 ERROR: Exception on /user [POST] [in D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 1211, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a WebResultVO.
