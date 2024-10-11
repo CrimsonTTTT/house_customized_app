@@ -31,19 +31,16 @@ app.config['JWT_SECRET_KEY'] = 'Gray-cat_secret_key'  # 设置jwt秘钥
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=60)  # 设置令牌过期时间为60分钟
 jwt = JWTManager(app)
 
-# 日志设置
-if not app.debug:  # 仅在非调试模式下记录日志
-    if not os.path.exists('logs'):
-        os.mkdir('logs')
+# 配置日志
+file_handler = RotatingFileHandler('logs/app.log', maxBytes=10000, backupCount=3)
+file_handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
+file_handler.setFormatter(formatter)
 
-    file_handler = RotatingFileHandler('logs/flask_app.log', maxBytes=10240, backupCount=10)
-    file_handler.setFormatter(logging.Formatter(
-        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'
-    ))
-    file_handler.setLevel(logging.INFO)
-    app.logger.addHandler(file_handler)
-    app.logger.setLevel(logging.INFO)       # 日志级别
-    app.logger.info('Flask App Startup')
+# 将处理器添加到 Flask 的 logger
+app.logger.addHandler(file_handler)
+# 设置日志级别
+app.logger.setLevel(logging.INFO)
 
 
 @app.route('/')

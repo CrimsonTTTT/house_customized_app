@@ -32,6 +32,18 @@ def create_user():
     return "success"
 
 
+@api_bp.route('/slideImg', methods=['GET'])
+def get_index_slide_images():
+    result_images = [
+        "http://xxx.com/img1",
+        "http://xxx.com/img2",
+        "https://xxx.com/img3"
+    ]
+    return WebResultVO(Code.SUCCESS.value, result_images).to_dict()
+
+
+# =====================以下为测试用===========================================================
+
 @api_bp.route('/protect', methods=['GET'])
 @jwt_required()
 def test_jwt():
