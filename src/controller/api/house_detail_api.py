@@ -32,6 +32,16 @@ def find_house_detail_all():
     return jsonify(results), 200
 
 
+@api_bp2.route('/detail/page', methods=['GET'])
+@jwt_required()
+def find_house_detail_by_pages():
+    page_index = request.args.get("page")
+    page_size = request.args.get("page_size")
+
+    result = details_service.get_details_by_page(int(page_index), int(page_size))
+    return result
+
+
 @api_bp2.route('/detail', methods=['DELETE'])
 @jwt_required()
 def delete_house_detail_by_id():
@@ -41,3 +51,19 @@ def delete_house_detail_by_id():
     return result
 
 
+@api_bp2.route('/detail', methods=['PATCH'])
+@jwt_required()
+def update_detail_by_id():
+    if not request.is_json:
+        return WebResultVO(Code.FAIL_FORMAT.value, "Request must be JSON")
+
+    request_data = request.get_json()
+    detail_id = request_data.get('id')
+    title = request_data.get('title')
+    description = request_data.get('description')
+    coverImg = request_data.get('coverImg')
+    imgs = request_data.get('imgs')
+
+    result = details_service.update_detail_by_id(detail_id, title, description, coverImg, imgs)
+    current_app.logger.info(f"返回数据：{result}")
+    return result

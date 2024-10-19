@@ -32,6 +32,7 @@ def create_user():
     return "success"
 
 
+# 首页的轮播图，直接返回一个固定的图片连接就行
 @api_bp.route('/slideImg', methods=['GET'])
 def get_index_slide_images():
     result_images = [
