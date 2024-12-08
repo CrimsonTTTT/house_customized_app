@@ -43,6 +43,8 @@ def get_index_slide_images():
     return WebResultVO(Code.SUCCESS.value, result_images).to_dict()
 
 
+
+
 # =====================以下为测试用===========================================================
 
 @api_bp.route('/protect', methods=['GET'])

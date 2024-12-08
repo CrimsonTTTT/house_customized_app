@@ -1,4 +1,3 @@
-import os
 import logging
 from datetime import timedelta
 from logging.handlers import RotatingFileHandler
@@ -6,8 +5,8 @@ from logging.handlers import RotatingFileHandler
 from flask import Flask
 from flask_jwt_extended import JWTManager
 
-from src.controller.api.api import api_bp
-from src.controller.api.house_detail_api import api_bp2
+from src.controller.api.wx_app.wx_app import api_bp
+from src.controller.api.backend.house_detail_api import api_bp2
 from src.models.db.db_config import db
 
 app = Flask(__name__)
