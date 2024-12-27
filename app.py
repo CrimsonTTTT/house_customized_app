@@ -5,6 +5,7 @@ from logging.handlers import RotatingFileHandler
 from flask import Flask
 from flask_jwt_extended import JWTManager
 
+from src.controller.api.wx_app.sort_api import api_bp3
 from src.controller.api.wx_app.wx_app import api_bp
 from src.controller.api.backend.house_detail_api import api_bp2
 from src.models.db.db_config import db
@@ -12,9 +13,12 @@ from src.models.db.db_config import db
 app = Flask(__name__)
 app.register_blueprint(api_bp)
 app.register_blueprint(api_bp2)
+app.register_blueprint(api_bp3)
 
 # 配置 MySQL 数据库 --------------------------------------------------------------------------------
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:123456@20.4.2.137:3306/house_customized'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:123456@20.4.2.137:3306/house_customized'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:3306/house_customized'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 

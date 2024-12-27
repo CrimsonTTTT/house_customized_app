@@ -1,72 +1,56 @@
-2024-10-11 15:10:40,441 INFO: {'status': 801, 'data': '数据不存在'} [in D:\TestCode\HouseCustomizedBackAPP\src\controller\api\house_detail_api.py:41]
-2024-10-11 15:11:39,256 ERROR: Exception on /detail [DELETE] [in D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py:838]
+2024-12-27 16:33:40,710 ERROR: Exception on /detail/page [GET] [in D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py:838]
 Traceback (most recent call last):
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
-    return current_app.ensure_sync(fn)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\src\controller\api\house_detail_api.py", line 41, in delete_house_detail_by_id
-    current_app.logger.debug("返回数据：" + result)
-                             ~~~~~~~~~~~~~^~~~~~~~
-TypeError: can only concatenate str (not "dict") to str
-2024-10-11 15:17:23,641 INFO: 返回数据：{'status': 801, 'data': '数据不存在'} [in D:\TestCode\HouseCustomizedBackAPP\src\controller\api\house_detail_api.py:41]
-2024-10-11 15:42:09,889 ERROR: Exception on /slideImg [GET] [in D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py:838]
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\src\controller\api\backend\house_detail_api.py", line 39, in find_house_detail_by_pages
+    return result
+                  
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-12-27 16:34:07,433 ERROR: Exception on /detail/page [GET] [in D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py:838]
 Traceback (most recent call last):
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
-    return self.finalize_request(rv)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 902, in finalize_request
-    response = self.make_response(rv)
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 1211, in make_response
-    raise TypeError(
-TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a WebResultVO.
-2024-10-12 14:47:21,312 INFO: 返回数据：{'status': 801, 'data': '数据不存在'} [in D:\TestCode\HouseCustomizedBackAPP\src\controller\api\house_detail_api.py:58]
-2024-10-12 14:47:32,261 INFO: 返回数据：{'status': 200, 'data': 'Detail 2 updated successfully!'} [in D:\TestCode\HouseCustomizedBackAPP\src\controller\api\house_detail_api.py:58]
-2024-10-14 19:56:29,666 ERROR: Exception on /detail/page [GET] [in D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py:838]
-Traceback (most recent call last):
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
-    return current_app.ensure_sync(fn)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\src\controller\api\house_detail_api.py", line 40, in find_house_detail_by_pages
-    result = details_service.get_details_by_page(page_index, page_size)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\src\service\details_service.py", line 22, in get_details_by_page
-    db_details = Detail.query.paginate(page=page_index, per_page=page_size)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask_sqlalchemy\query.py", line 98, in paginate
-    return QueryPagination(
-           ^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask_sqlalchemy\pagination.py", line 56, in __init__
-    page, per_page = self._prepare_page_args(
-                     ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\TestCode\HouseCustomizedBackAPP\.venv\Lib\site-packages\flask_sqlalchemy\pagination.py", line 126, in _prepare_page_args
-    if page < 1:
-       ^^^^^^^^
-TypeError: '<' not supported between instances of 'str' and 'int'
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\src\controller\api\backend\house_detail_api.py", line 39, in find_house_detail_by_pages
+    return result
+                  
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-12-27 16:34:14,352 ERROR: Exception on /detail/page [GET] [in D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\src\controller\api\backend\house_detail_api.py", line 38, in find_house_detail_by_pages
+    result = details_service.get_details_by_page(int(page_index), int(page_size))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\IT\Local_Code_Path\Manage_System\house_customized_app\src\service\details_service.py", line 24, in get_details_by_page
+    print(details_list)
+UnicodeEncodeError: 'gbk' codec can't encode character '\xb2' in position 35: illegal multibyte sequence

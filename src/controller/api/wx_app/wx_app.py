@@ -36,9 +36,9 @@ def create_user():
 @api_bp.route('/slideImg', methods=['GET'])
 def get_index_slide_images():
     result_images = [
-        "http://xxx.com/img1",
-        "http://xxx.com/img2",
-        "https://xxx.com/img3"
+        "https://pic.shejiben.com/td/sjbCase/e84f7a4320cd42bea4963e9a7d97c78b.jpg",
+        "https://imgs.699pic.com/images/401/775/552.jpg!seo.v1",
+        "https://imgs.699pic.com/images/401/775/552.jpg!seo.v1"
     ]
     return WebResultVO(Code.SUCCESS.value, result_images).to_dict()
 

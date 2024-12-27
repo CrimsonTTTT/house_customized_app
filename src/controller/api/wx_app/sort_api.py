@@ -11,21 +11,11 @@ api_bp3 = Blueprint('wx_detail_api', __name__)
 
 
 @api_bp3.route('/detail/hot', methods=['GET'])
-@jwt_required()
 def get_hot_detail():
-    if not request.is_json:
-        return WebResultVO(Code.FAIL_FORMAT.value, "Request must be JSON")
-
     # page_index = request.args.get("page")
     # page_size = request.args.get("page_size")
-    page_index = 0
+    page_index = 1
     page_size = 10
-
     result = details_service.get_details_by_page(int(page_index), int(page_size))
     return result
-
-@api_bp3.route('/detail/hot', methods=['GET'])
-@jwt_required()
-def get_sort_list():
-    
 

@@ -7,7 +7,7 @@ from src.models.web_result import WebResultVO
 from src.models.result_code import Code
 from src.service import details_service
 
-api_bp2 = Blueprint('house_api', __name__)
+api_bp2 = Blueprint('api_bp2', __name__)
 
 
 @api_bp2.route('/detail', methods=['POST'])
@@ -26,18 +26,15 @@ def create_house_detail():
 
 
 @api_bp2.route('/detail', methods=['GET'])
-@jwt_required()
 def find_house_detail_all():
     results = details_service.get_all_details()
     return jsonify(results), 200
 
 
 @api_bp2.route('/detail/page', methods=['GET'])
-@jwt_required()
 def find_house_detail_by_pages():
     page_index = request.args.get("page")
     page_size = request.args.get("page_size")
-
     result = details_service.get_details_by_page(int(page_index), int(page_size))
     return result
 
