@@ -2,6 +2,9 @@
 from flask import jsonify
 from flask_jwt_extended import create_access_token
 
+from src.dao.user import UserDao
+
+
 
 def login(username, password):
     # 模拟数据库中数据
@@ -20,5 +23,11 @@ def login(username, password):
 
 
 def logout():
+    pass
+
+
+def register_my_user(username, password):
+    user_dao = UserDao()
+
     pass
 
