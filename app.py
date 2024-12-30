@@ -8,12 +8,15 @@ from flask_jwt_extended import JWTManager
 from src.controller.api.wx_app.sort_api import api_bp3
 from src.controller.api.wx_app.wx_app import api_bp
 from src.controller.api.backend.house_detail_api import api_bp2
-from src.models.db.db_config import db
+from src.models.db.db_config import db, init_service_and_dao
 
 app = Flask(__name__)
+
+# 配置路由api-----------------------------------------------------------------------------------
 app.register_blueprint(api_bp)
 app.register_blueprint(api_bp2)
 app.register_blueprint(api_bp3)
+
 
 # 配置 MySQL 数据库 --------------------------------------------------------------------------------
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:123456@20.4.2.137:3306/house_customized'
@@ -21,12 +24,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:330
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-
 db.init_app(app)    # 初始化数据库
 
 with app.app_context():
     db.create_all()  # 创建数据库表
 
+init_service_and_dao(app, db)   # 自定义的一个接口路由，和服务
 # -------------------------------------------------------------------------------------------------
 
 # JWT配置，访问受保护的接口时需要再头部增加 Authorization：Bearer + 《jwt_token》
@@ -34,7 +37,7 @@ app.config['JWT_SECRET_KEY'] = 'Gray-cat_secret_key'  # 设置jwt秘钥
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=60)  # 设置令牌过期时间为60分钟
 jwt = JWTManager(app)
 
-# 配置日志
+# 配置日志--------------------------------------------------------------------------------------------
 file_handler = RotatingFileHandler('logs/app.log', maxBytes=10000, backupCount=3)
 file_handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
